@@ -188,7 +188,33 @@
         },
         "next": [
             "MainChapter_XEnter",
+            "[JumpBack]SwipeRightForChapterInVolume",
             "[JumpBack]SwipeLeftForChapter"
+        ]
+    },
+    "SwipeRightForChapterInVolume": {
+        "desc": "卷内章节列表向后翻页：外服进入卷后停在前几章，目标章节（如第5~7章）在右侧屏外",
+        "max_hit": 3,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    500,
+                    300,
+                    100,
+                    100
+                ],
+                "end": [
+                    100,
+                    300,
+                    100,
+                    100
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "SwipeStop"
         ]
     },
     "MainChapter_XEnter": {
