@@ -1,0 +1,284 @@
+{
+    "task": [
+        {
+            "name": "切换游戏语言",
+            "label": "$Task.SwitchLanguage",
+            "entry": "SwitchLanguage",
+            "description": "$Task.SwitchLanguage.desc",
+            "group": [
+                "daily"
+            ],
+            "option": [
+                "切换游戏语言·目标"
+            ]
+        },
+        {
+            "name": "恢复游戏语言",
+            "label": "$Task.RestoreLanguage",
+            "entry": "SwitchLanguage",
+            "description": "$Task.RestoreLanguage.desc",
+            "group": [
+                "daily"
+            ],
+            "option": [
+                "恢复游戏语言·目标"
+            ]
+        }
+    ],
+    "option": {
+        "切换游戏语言·目标": {
+            "type": "select",
+            "label": "$Option.SwitchLanguage.Target",
+            "cases": [
+                {
+                    "name": "简体中文",
+                    "label": "$Option.SwitchLanguage.Lang.ZhHans",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "简体中文"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "简体中文"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "繁體中文",
+                    "label": "$Option.SwitchLanguage.Lang.ZhHant",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "繁體中文"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "繁體中文"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "English",
+                    "label": "$Option.SwitchLanguage.Lang.En",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "English"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "English"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "日本語",
+                    "label": "$Option.SwitchLanguage.Lang.Ja",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "日本語"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "日本語"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "한국어",
+                    "label": "$Option.SwitchLanguage.Lang.Ko",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "한국어"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "한국어"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "default_case": "简体中文"
+        },
+        "恢复游戏语言·目标": {
+            "type": "select",
+            "label": "$Option.RestoreLanguage.Target",
+            "cases": [
+                {
+                    "name": "简体中文",
+                    "label": "$Option.SwitchLanguage.Lang.ZhHans",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "简体中文"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "简体中文"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "繁體中文",
+                    "label": "$Option.SwitchLanguage.Lang.ZhHant",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "繁體中文"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "繁體中文"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "English",
+                    "label": "$Option.SwitchLanguage.Lang.En",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "English"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "English"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "日本語",
+                    "label": "$Option.SwitchLanguage.Lang.Ja",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "日本語"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "日本語"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "한국어",
+                    "label": "$Option.SwitchLanguage.Lang.Ko",
+                    "pipeline_override": {
+                        "SwitchLanguageDone": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "한국어"
+                                    ]
+                                }
+                            }
+                        },
+                        "SwitchLanguageSelect": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "한국어"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "default_case": "English"
+        }
+    }
+}

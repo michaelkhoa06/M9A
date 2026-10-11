@@ -1,0 +1,249 @@
+{
+    "SwitchLanguage": {
+        "desc": "切换游戏文本语言任务开始（主菜单 → 设置 → 语言）",
+        "next": [
+            "[JumpBack]ReturnMain",
+            "SwitchLanguageMenuFlag",
+            "[JumpBack]MainMenuEntry"
+        ]
+    },
+    "SwitchLanguageMenuFlag": {
+        "desc": "已在主菜单（DETAIL 按钮与语言无关）",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    364,
+                    84,
+                    166,
+                    125
+                ],
+                "template": "SwitchAccount/Detail.png"
+            }
+        },
+        "next": [
+            "SwitchLanguageSettingEntry",
+            "[JumpBack]MenuRight"
+        ]
+    },
+    "SwitchLanguageSettingEntry": {
+        "desc": "主菜单中的设置入口，兼容各语言文本",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    33,
+                    457,
+                    515,
+                    214
+                ],
+                "expected": [
+                    "设置",
+                    "設定",
+                    "設置",
+                    "Settings"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                22,
+                78,
+                177,
+                630
+            ]
+        },
+        "next": [
+            "SwitchLanguageTabFlag",
+            "[JumpBack]SwitchLanguageTab"
+        ]
+    },
+    "SwitchLanguageTab": {
+        "desc": "设置左侧的语言页签",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    22,
+                    78,
+                    177,
+                    630
+                ],
+                "expected": [
+                    "语言",
+                    "語言",
+                    "言語",
+                    "Language"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                280,
+                140,
+                680,
+                260
+            ]
+        }
+    },
+    "SwitchLanguageTabFlag": {
+        "desc": "已在语言设置页（游戏语言一行）",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    280,
+                    195,
+                    260,
+                    45
+                ],
+                "expected": [
+                    "游戏语言",
+                    "遊戲語言",
+                    "Language"
+                ]
+            }
+        },
+        "next": [
+            "SwitchLanguageDone",
+            "SwitchLanguageListOpen",
+            "[JumpBack]SwitchLanguageOpenDropdown"
+        ]
+    },
+    "SwitchLanguageDone": {
+        "desc": "下拉框当前显示目标语言（expected 由任务选项覆盖）",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    738,
+                    201,
+                    180,
+                    35
+                ],
+                "expected": [
+                    "简体中文"
+                ],
+                "only_rec": true
+            }
+        },
+        "next": [
+            "SwitchLanguageHomeFlag",
+            "[JumpBack]HomeButton",
+            "[JumpBack]BackButton"
+        ]
+    },
+    "SwitchLanguageOpenDropdown": {
+        "desc": "展开游戏语言下拉框",
+        "max_hit": 5,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    738,
+                    201,
+                    212,
+                    35
+                ],
+                "expected": ".+",
+                "only_rec": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                738,
+                201,
+                212,
+                330
+            ]
+        }
+    },
+    "SwitchLanguageListOpen": {
+        "desc": "下拉列表已展开（首项固定为简体中文）",
+        "max_hit": 8,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    738,
+                    242,
+                    212,
+                    38
+                ],
+                "expected": [
+                    "简体中文"
+                ],
+                "only_rec": true
+            }
+        },
+        "next": [
+            "SwitchLanguageDone",
+            "SwitchLanguageSelect",
+            "SwitchLanguageTabFlag"
+        ]
+    },
+    "SwitchLanguageSelect": {
+        "desc": "点击目标语言（expected 由任务选项覆盖）",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    738,
+                    242,
+                    212,
+                    280
+                ],
+                "expected": [
+                    "简体中文"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                280,
+                140,
+                680,
+                260
+            ],
+            "timeout": 10000
+        },
+        "next": [
+            "SwitchLanguageDone",
+            "[JumpBack]Confirm",
+            "SwitchLanguageTabFlag"
+        ]
+    },
+    "SwitchLanguageHomeFlag": {
+        "desc": "回到主界面，任务结束",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1022,
+                    419,
+                    194,
+                    166
+                ],
+                "template": [
+                    "StartUp/HomeFlag/"
+                ]
+            }
+        }
+    }
+}

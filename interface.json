@@ -190,6 +190,7 @@
         "tasks/preset/DailyReRelease.json",
         "tasks/preset/StandAlone.json",
         "tasks/StartUp.json",
+        "tasks/SwitchLanguage.json",
         "tasks/Wilderness.json",
         "tasks/Psychube.json",
         "tasks/Combat.json",
