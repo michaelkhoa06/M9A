@@ -177,7 +177,30 @@
         "next": [
             "[JumpBack]ObtainedAwards",
             "[JumpBack]HasProvidence",
+            "TrustZeroReached",
             "[JumpBack]NextCharacter",
+            "HomeFlag",
+            "[JumpBack]BackButton"
+        ]
+    },
+    "TrustZeroReached": {
+        "desc": "已按信任降序排列，遇到信任为 0% 的角色说明后面都没有信任奖励，直接回主界面结束",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    290,
+                    368,
+                    80,
+                    30
+                ],
+                "expected": "^0%$",
+                "only_rec": true
+            }
+        },
+        "next": [
+            "HomeFlag",
+            "[JumpBack]HomeButton",
             "[JumpBack]BackButton"
         ]
     },
