@@ -157,8 +157,9 @@
         },
         "next": [
             "FlagInWilderness_rec",
-            "[JumpBack]Cloud",
-            "[JumpBack]BackButtonWithDelay"
+            "[JumpBack]GoodDreamWellObtain",
+            "[JumpBack]BackButtonWithDelay",
+            "[JumpBack]Cloud"
         ]
     },
     "FlagInGoodDreamWellFishing": {
@@ -182,8 +183,9 @@
         },
         "next": [
             "FlagInWilderness_rec",
-            "[JumpBack]Cloud",
-            "[JumpBack]BackButton"
+            "[JumpBack]GoodDreamWellObtain",
+            "[JumpBack]BackButton",
+            "[JumpBack]Cloud"
         ]
     },
     "Cloud": {

@@ -3,12 +3,13 @@
         "next": [
             "[JumpBack]ExitCollectProductAwards",
             "FlagInWilderness",
-            "[JumpBack]EnterWilderness",
+            "EnterWilderness",
             "[JumpBack]HomeLoading",
             "[JumpBack]ReturnMain"
         ]
     },
     "EnterWilderness": {
+        "desc": "点击入口后只等待荒原界面/加载界面，不回到 Wilderness 的 next 列表：否则转场间隙会二次点击入口，或在加载完成后的淡入期间命中 ReturnMain 退出再重进，重进荒原易卡在加载界面",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -25,7 +26,13 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "timeout": 30000,
+        "next": [
+            "FlagInWilderness",
+            "[JumpBack]ExitCollectProductAwards",
+            "[JumpBack]HomeLoading"
+        ]
     },
     "FlagInWilderness": {
         "recognition": {
