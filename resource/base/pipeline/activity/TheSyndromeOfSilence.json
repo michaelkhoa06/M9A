@@ -3,6 +3,8 @@
         // 3.8 版本无声综合征，常驻
         "next": [
             "SOSMainMenu",
+            "SOSMain",
+            "[JumpBack]SOSSelectResonator",
             "[JumpBack]ReturnMain",
             "[JumpBack]SOSStop",
             "[JumpBack]SOSStart",
@@ -871,8 +873,38 @@
             "[JumpBack]SOSSkipMessage",
             "[JumpBack]SOSNextMessage",
             "[JumpBack]SOSNextMessage_left",
+            "[JumpBack]SOSCloseProfile",
             "SOSNodeProcessErrorLoop"
         ]
+    },
+    "SOSCloseProfile": {
+        "desc": "误入角色「改造状态」面板（如选择共鸣器时误触）时点左上角返回；原先异常循环中没有能离开该面板的节点，max_hit 用尽后任务失败",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    70,
+                    200,
+                    130,
+                    40
+                ],
+                "expected": [
+                    "改造状态"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    30,
+                    28,
+                    34,
+                    38
+                ]
+            }
+        },
+        "post_wait_freezes": 300
     },
     // 主页面各种弹窗处理,
     "SOSArtefactsObtained": {
@@ -1055,9 +1087,9 @@
             "type": "Click",
             "param": {
                 "target": [
-                    375,
-                    288,
-                    75,
+                    245,
+                    150,
+                    70,
                     70
                 ]
             }
