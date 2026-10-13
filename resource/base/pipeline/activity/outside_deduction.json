@@ -735,7 +735,10 @@
                     90,
                     85
                 ],
-                "template": "OutsideDeduction/SOD_ArcanistAdd.png"
+                "template": [
+                    "OutsideDeduction/SOD_ArcanistAdd.png",
+                    "OutsideDeduction/SOD_ArcanistAdd_2.png"
+                ]
             }
         },
         "action": {
