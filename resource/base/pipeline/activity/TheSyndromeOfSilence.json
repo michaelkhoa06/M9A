@@ -5,6 +5,17 @@
             "SOSMainMenu",
             "SOSMain",
             "[JumpBack]SOSSelectResonator",
+            "[JumpBack]SOSSelectArtefact",
+            "[JumpBack]SOSArtefactsObtained",
+            "[JumpBack]SOSSetOff",
+            "[JumpBack]SOSSelectHarmonic",
+            "[JumpBack]SOSHarmonicObtained",
+            "[JumpBack]SOSStatsUp",
+            "[JumpBack]SOSStatBreakthrough",
+            "[JumpBack]SOSFormBreakthrough",
+            "[JumpBack]SOSResonatorObtained",
+            "[JumpBack]SOSLoseArtefact",
+            "[JumpBack]SOSStrengthenArtefact",
             "[JumpBack]ReturnMain",
             "[JumpBack]SOSStop",
             "[JumpBack]SOSStart",
@@ -874,6 +885,18 @@
             "[JumpBack]SOSNextMessage",
             "[JumpBack]SOSNextMessage_left",
             "[JumpBack]SOSCloseProfile",
+            "[JumpBack]SOSSelectResonator",
+            "[JumpBack]SOSSelectArtefact",
+            "[JumpBack]SOSArtefactsObtained",
+            "[JumpBack]SOSSetOff",
+            "[JumpBack]SOSSelectHarmonic",
+            "[JumpBack]SOSHarmonicObtained",
+            "[JumpBack]SOSStatsUp",
+            "[JumpBack]SOSStatBreakthrough",
+            "[JumpBack]SOSFormBreakthrough",
+            "[JumpBack]SOSResonatorObtained",
+            "[JumpBack]SOSLoseArtefact",
+            "[JumpBack]SOSStrengthenArtefact",
             "SOSNodeProcessErrorLoop"
         ]
     },
@@ -927,7 +950,10 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 500,
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
+        ]
     },
     "SOSSelectArtefact": {
         "recognition": {
@@ -959,6 +985,9 @@
         "next": [
             "SOSSelectArtefactConfirm",
             "SOSSelectArtefact"
+        ],
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
         ]
     },
     "SOSSelectArtefactConfirm": {
@@ -999,7 +1028,10 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 500,
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
+        ]
     },
     "SOSStrengthenArtefact": {
         "recognition": {
@@ -1020,7 +1052,10 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 500,
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
+        ]
     },
     "SOSResonatorObtained": {
         // 获得共鸣器
@@ -1065,7 +1100,10 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 500,
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
+        ]
     },
     "SOSSelectResonator": {
         "recognition": {
@@ -1098,6 +1136,9 @@
             "SOSSelectResonatorConfirm",
             "SOSFormBreakthrough",
             "SOSSelectResonator"
+        ],
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
         ]
     },
     "SOSSelectResonatorConfirm": {
@@ -1143,7 +1184,10 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
+        ]
     },
     "SOSNextStep": {
         "recognition": {
@@ -1305,7 +1349,10 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 500,
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
+        ]
     },
     "SOSStatsUp": {
         "recognition": {
@@ -1326,7 +1373,10 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 500,
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
+        ]
     },
     "SOSStatBreakthrough": {
         "recognition": {
@@ -1359,6 +1409,9 @@
         "next": [
             "SOSStatBreakthroughFinish",
             "SOSStatBreakthrough"
+        ],
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
         ]
     },
     "SOSStatBreakthroughFinish": {
@@ -1404,6 +1457,7 @@
         }
     },
     "SOSCombat": {
+        "desc": "等待战斗结束；后期恶战每回合约 2 分钟，原 timeout 1000000ms（约 16.7 分钟）会在战斗中途超时，进入异常循环后任务失败",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1422,7 +1476,7 @@
         "action": {
             "type": "Click"
         },
-        "timeout": 1000000,
+        "timeout": 3600000,
         "rate_limit": 3000,
         "next": [
             "CheckStopping",
@@ -1588,6 +1642,9 @@
         "next": [
             "SOSSelectConfirmButton",
             "SOSSelectHarmonic"
+        ],
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
         ]
     },
     "SOSSelectConfirmButton": {
@@ -1947,6 +2004,9 @@
             "SOSGoToNextScene",
             "SOSSetOff",
             "[JumpBack]CloseTip"
+        ],
+        "on_error": [
+            "SOSNodeProcessErrorLoop"
         ]
     },
     "SOSGoToNextScene": {
