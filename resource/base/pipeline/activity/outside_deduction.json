@@ -3353,6 +3353,7 @@
             "SOD_Nothinghappen",
             "SODStop_Click_2",
             "SOD_Complete_Click_1",
+            "[JumpBack]SOD_Skip",
             "SOD_Skip_Confirm"
         ]
     },
