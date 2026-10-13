@@ -27,15 +27,15 @@
         ]
     },
     "SwitchLanguageSettingEntry": {
-        "desc": "主菜单中的设置入口，兼容各语言文本",
+        "desc": "主菜单中的设置入口，兼容各语言文本；roi 只覆盖设置一列——英文界面下「Settings」与右侧「Udimorium」会被 OCR 合并成一个框，框中心落在两者交界处，误入 Udimorium",
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    33,
-                    457,
-                    515,
-                    214
+                    280,
+                    575,
+                    118,
+                    50
                 ],
                 "expected": [
                     "设置",
