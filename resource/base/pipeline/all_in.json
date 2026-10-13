@@ -280,14 +280,15 @@
         "next": []
     },
     "RecognizeRemainingAp": {
+        "desc": "识别右上角剩余体力；roi 不能太窄，否则单个数字（如体力只剩 1）识别不到，导致 TargetCountAbort",
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    1146,
-                    26,
-                    43,
-                    19
+                    1136,
+                    22,
+                    63,
+                    27
                 ],
                 "expected": [
                     "^(?:[0-9]{1,3}|1[0-9]{3})$"
