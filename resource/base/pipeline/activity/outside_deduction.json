@@ -726,14 +726,15 @@
         }
     },
     "SOD_ArcanistAdd": {
+        "desc": "同行者召集空位；roi 覆盖整行卡槽：卡槽条可左右滚动（入场动画或 SOD_SwipeLeft 盲滑都会使其偏移），只盯第一格时一旦偏移就永远识别不到，陷入盲滑循环",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    63,
-                    335,
-                    90,
-                    85
+                    0,
+                    300,
+                    1280,
+                    200
                 ],
                 "template": [
                     "OutsideDeduction/SOD_ArcanistAdd.png",
