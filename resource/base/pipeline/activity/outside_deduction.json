@@ -903,8 +903,38 @@
             "SOD_Acquire",
             "SOD_NewArcanist",
             "SOD_Nothinghappen",
+            "[JumpBack]SOD_NoArcanistSelected",
             "SOD_ArcanistAdd_Confirm_1"
         ]
+    },
+    "SOD_NoArcanistSelected": {
+        "desc": "招募新同行者时未选中任何角色，弹出「尚未选择任何角色，是否确认？」：直接确认、放弃本次招募继续推进，否则任务原地超时",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    380,
+                    290,
+                    520,
+                    60
+                ],
+                "expected": [
+                    "尚未选择"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    656,
+                    400,
+                    298,
+                    52
+                ]
+            }
+        },
+        "post_wait_freezes": 300
     },
     "SOD_ArcanistAdd_Confirm_2": {
         "recognition": {
