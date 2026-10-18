@@ -1,0 +1,52 @@
+{
+    "ObtainedAwards": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    {
+                        "recognition": {
+                            "type": "TemplateMatch",
+                            "param": {
+                                "roi": [
+                                    524,
+                                    62,
+                                    232,
+                                    158
+                                ],
+                                "template": "Awards/ObtainedAwards.png"
+                            }
+                        }
+                    },
+                    {
+                        "recognition": {
+                            "type": "OCR",
+                            "param": {
+                                "roi": [
+                                    540,
+                                    105,
+                                    200,
+                                    50
+                                ],
+                                "expected": [
+                                    "^Obtained$"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    580,
+                    630,
+                    120,
+                    40
+                ]
+            }
+        }
+    }
+}

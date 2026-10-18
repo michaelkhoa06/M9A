@@ -1,0 +1,76 @@
+{
+    "ClickBlank": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    {
+                        "recognition": {
+                            "type": "OCR",
+                            "param": {
+                                "roi": [
+                                    569,
+                                    649,
+                                    140,
+                                    38
+                                ],
+                                "expected": [
+                                    "点击",
+                                    "空白",
+                                    "关闭"
+                                ],
+                                "only_rec": true
+                            }
+                        }
+                    },
+                    {
+                        "recognition": {
+                            "type": "OCR",
+                            "param": {
+                                "roi": [
+                                    572,
+                                    607,
+                                    143,
+                                    24
+                                ],
+                                "expected": [
+                                    "点击",
+                                    "空白",
+                                    "关闭"
+                                ],
+                                "only_rec": true
+                            }
+                        }
+                    },
+                    {
+                        "recognition": {
+                            "type": "OCR",
+                            "param": {
+                                "roi": [
+                                    540,
+                                    105,
+                                    200,
+                                    50
+                                ],
+                                "expected": [
+                                    "^Obtained$"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    580,
+                    630,
+                    120,
+                    40
+                ]
+            }
+        }
+    }
+}
