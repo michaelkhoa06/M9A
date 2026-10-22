@@ -6,5 +6,47 @@
                 "package": "com.bluepoch.m.en.reverse1999"
             }
         }
+    },
+    "AccumulatedSignIn": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    {
+                        "recognition": {
+                            "type": "TemplateMatch",
+                            "param": {
+                                "roi": [
+                                    562,
+                                    483,
+                                    347,
+                                    163
+                                ],
+                                "template": [
+                                    "StartUp/AccumulatedSignIn_new.png",
+                                    "StartUp/AccumulatedSignIn.png"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "recognition": {
+                            "type": "OCR",
+                            "param": {
+                                "roi": [
+                                    440,
+                                    50,
+                                    400,
+                                    60
+                                ],
+                                "expected": [
+                                    "Days Logged In"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
     }
 }
