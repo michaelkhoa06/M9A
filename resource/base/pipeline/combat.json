@@ -754,6 +754,7 @@
         }
     },
     "TheFarLeftOfStageList": {
+        "desc": "关卡列表最左端（第 01 关）；expected 锚定开头：OCR 曾把「20/ 古希腊悲剧」误读成「201よキ米」，未锚定的 \"01\" 命中后一路右滑永远找不到目标关",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -763,7 +764,7 @@
                     1280,
                     160
                 ],
-                "expected": "01"
+                "expected": "^01"
             }
         },
         "next": [
